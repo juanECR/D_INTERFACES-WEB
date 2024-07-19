@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito</title>
+  <link rel="canonical" href="https://icons.getbootstrap.com/icons/archive-fill/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+            <!--    ------------------------------------   Menu ------------------------------>
+  <div >
+    <nav class="navbar navbar-expand-lg w-100" style="background: black; position: fixed;z-index: 1;">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="index.html"><img src="imagenes/logo-elegant.png" alt="" width="150px"
+            height="50px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="productos.html" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Categorias
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Hombres</a></li>
+                <li><a class="dropdown-item" href="#">Mujeres</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Niños</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="perfil.html">Perfil</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="w-100 row m-0 " >
+    <!-- -----------------------------------------------CUERPO CARRITO DE COMPRAS------------------------------------------------->
+    <div id="productos" class="w-75" style="background-color: rgb(158, 158, 158);overflow: auto; height: 850px; margin-top: 75px;">
+      <h3 class="text-center text-white" >PRODUCTOS</h3>
+
+<!-- --------------PRODUCTOS DEL CARRITO-------------->
+
+      <div class="card w-100 row  m-0 mb-2 " style="height: 170px;">
+        <img src="https://i.pinimg.com/564x/c3/45/31/c34531f2b0d3e42d53592129f95ed18d.jpg" alt=""
+          class="h-100 p-0 col-2">
+        <div id="producto" class="p-0 col-4 h-100">
+          <p class="text-center"> <b>Pantalones cortos Jordan</b><br>Pantalones cortos Jordan 23 Engineered Fleece para hombre completamente nuevos. Los pantalones cortos Jordan tienen dos bolsillos delanteros para guardar cosas y cordones para ajustar la cintura.  </p>
+        </div>
+        <div id="precio" class="col-1 p-0 h-100"><input id="precio_p1" type="hidden" value="30" readonly>30.00</div>
+        <div id="cantidad" class="col-3 p-4 h-100 row">
+          <button class="btn btn-danger col-2 h-50 m-2" onclick="restarcantidad();">-</button>
+          <input id="cantidad_p1" type="number" class="col-4 h-50 m-2" value="0">
+          <button class="btn btn-success col-2 h-50 m-2" onclick="sumarcantidad();">+</button>
+        </div>
+        <div id="subtotal" class="col-1 p-0 h-100">S/.90.00</div>
+        
+        <div id="botoneliminar" class="col-1 p-0 h-100" style="display: flex;align-items: end;">
+      <button type="button" class="btn btn-outline-danger col-12" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+          <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"></path>
+          </svg><font style="vertical-align: inherit;">
+          Eliminar
+        </font></button>
+        </div>
+      </div>
+
+
+      <div class="card w-100 row  m-0 mb-2 " style="height: 170px;">
+        <img src="https://i.pinimg.com/564x/10/af/20/10af20faac1b6e742f7911f1adbfdf1b.jpg" alt=""
+          class="h-100 p-0 col-2">
+        <div id="producto" class="p-0 col-4 h-100">
+          <p class="text-center"><b>Majesda</b><br>¿Buscas la chaqueta y el abrigo acolchados perfectos para completar tu look de moda urbana? 
+            ¡No busques más que Majesda®! Nuestra marca ofrece una amplia gama de chaquetas y abrigos acolchados elegantes y funcionales,
+             perfectos para agregar un toque de vanguardia a cualquier atuendo. </p>
+        </div>
+        <div id="precio" class="col-1 p-0 h-100"><input id="precio_p1" type="hidden" value="30" readonly>30.00</div>
+        <div id="cantidad" class="col-3 p-4 h-100 row">
+          <button class="btn btn-danger col-2 h-50 m-2" onclick="restarcantidad();">-</button>
+          <input id="cantidad_p1" type="number" class="col-4 h-50 m-2" value="0">
+          <button class="btn btn-success col-2 h-50 m-2" onclick="sumarcantidad();">+</button>
+        </div>
+        <div id="subtotal" class="col-1 p-0 h-100">S/.90.00</div>
+        
+        <div id="botoneliminar" class="col-1 p-0 h-100" style="display: flex;align-items: end;">
+      <button type="button" class="btn btn-outline-danger col-12" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+          <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"></path>
+          </svg><font style="vertical-align: inherit;">
+          Eliminar
+        </font></button>
+        </div>
+      </div>
+
+
+      <div class="card w-100 row  m-0 mb-2 " style="height: 170px;">
+        <img src="https://i.pinimg.com/564x/d8/cb/93/d8cb93f83c1d828fa13a06883f82df3f.jpg" alt=""
+          class="h-100 p-0 col-2">
+        <div id="producto" class="p-0 col-4 h-100">
+          <p class="text-center"><b> Zapatilla nike black</b> <br>Descubre la zapatilla Nike negra, perfecta para un estilo urbano y rendimiento deportivo. Con una parte superior transpirable y suela de goma duradera, combina comodidad y estilo para cualquier ocasión. Imprescindible para tu colección de calzado urbano.</p>
+        </div>
+        <div id="precio" class="col-1 p-0 h-100"><input id="precio_p1" type="hidden" value="30" readonly>30.00</div>
+        <div id="cantidad" class="col-3 p-4 h-100 row">
+          <button class="btn btn-danger col-2 h-50 m-2" onclick="restarcantidad();">-</button>
+          <input id="cantidad_p1" type="number" class="col-4 h-50 m-2" value="0">
+          <button class="btn btn-success col-2 h-50 m-2" onclick="sumarcantidad();">+</button>
+        </div>
+        <div id="subtotal" class="col-1 p-0 h-100">S/.90.00</div>
+        
+        <div id="botoneliminar" class="col-1 p-0 h-100" style="display: flex;align-items: end;">
+      <button type="button" class="btn btn-outline-danger col-12" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+          <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"></path>
+          </svg><font style="vertical-align: inherit;">
+          Eliminar
+        </font></button>
+        </div>
+      </div>
+
+
+       <h1 class="text-white">Te puede Gustar</h1>
+
+       <!-- --------------------------PRODUCTOS SIMILARES---------------->
+
+      <div id="productossimilares" class="w-100 h-50" >
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" >
+
+              <div id="img" style="display: flex; justify-content: space-around; padding: 13px;">
+                <div class="card" style="width: 18rem; height: 380px;" >
+                  <img height="200" src="https://i.pinimg.com/564x/74/ca/b4/74cab4976ab9e0176c34dd5574c85e79.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">camisa</h5>
+                    <p class="card-text">Polo Cuello Camisa Hombre Yotun Coco.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;height: 380px;">
+                  <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/358485-1000-1248/2021727_1.jpg?v=638512991973000000" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">camisa</h5>
+                    <p class="card-text">Polo Cuello Camisa Hombre Angelo Acero Intenso</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;height: 380px;">
+                  <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/356066-1000-1248/2018557_1.jpg?v=638493164573300000" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">camisa</h5>
+                    <p class="card-text">Polo Cuello Camisa Hombre Alfonso Gris Noche</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;height: 380px;">
+                  <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/357996-1000-1248/2043875_1.jpg?v=638503862279130000" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Casaca</h5>
+                    <p class="card-text">Casaca Mujer lhisa Stone Negro</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" >
+                <div id="img" style="display: flex; justify-content: space-around; padding: 13px;">
+                  <div class="card" style="width: 18rem; height: 380px;" >
+                    <img height="200" src="https://topitop.vteximg.com.br/arquivos/ids/357988-1000-1248/2043861_1.jpg?v=638503861508670000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">blusa</h5>
+                      <p class="card-text">Blusa Mujer Kendall Total Dark Bleach</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/361204-1000-1248/1815548_1.jpg?v=638549992097530000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Casaca</h5>
+                      <p class="card-text">Casaca Jean Hombre Nee Azul Oscuro</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/361464-1000-1248/2040170_1.jpg?v=638554992554230000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Jean</h5>
+                      <p class="card-text">Jean Hombre Barak Total Smok Bleach</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/361420-1000-1248/2048019_1.jpg?v=638554988353100000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Bermuda</h5>
+                      <p class="card-text">Bermuda Denim Hombre Hoper Total Dark Blackr</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" >
+                <div id="img" style="display: flex; justify-content: space-around; padding: 13px;">
+                  <div class="card" style="width: 18rem; height: 380px;" >
+                    <img height="200" src="https://topitop.vteximg.com.br/arquivos/ids/359890-1000-1248/2040518_1.jpg?v=638526028408270000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">camisa</h5>
+                      <p class="card-text">Camisa Hombre Ilyan Total Bleach</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/320336-1000-1248/1978233_1.jpg?v=638357482941900000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Bermuda</h5>
+                      <p class="card-text">Bermuda Hombre Bernardo Dirty Wash</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/361032-1000-1248/1687808_1.jpg?v=638549991185570000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Casaca</h5>
+                      <p class="card-text">Casaca Mujer Mary Core Azul Poly</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;height: 380px;">
+                    <img height="200px" src="https://topitop.vteximg.com.br/arquivos/ids/360782-1000-1248/1687912_1.jpg?v=638545124724300000" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Jogger</h5>
+                      <p class="card-text">Jogger Mujer Rosa Core Gris Fit Poly Htr</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" style="background:#0008;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" style="background:#0008;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    
+<!-- --------------------------------------INFROMACION DE PAGO----------------------------------->
+
+    <div id="monto" class="w-25" style="height: 820px; margin-top: 75px;padding: 20px;">
+
+        <div id="form-carrito" class="col-md-5 col-lg-12 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Informacion de pago</span>
+            <span class="badge bg-primary rounded-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Pantalones cortos Jordan</h6>
+                <small class="text-body-secondary">pantalon corto crema</small>
+              </div>
+              <span class="text-body-secondary">S/.30.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Majesda</h6>
+                <small class="text-body-secondary">Casaca majesda</small>
+              </div>
+              <span class="text-body-secondary">S/.30.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Zapatilla nike black</h6>
+                <small class="text-body-secondary"> zapatilla Nike negra</small>
+              </div>
+              <span class="text-body-secondary">S/.30.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+              <div class="text-success">
+                <h6 class="my-0">Codigo promocional</h6>
+                <small>XJKSHDMSS</small>
+              </div>
+              <span class="text-success">−S/. 50.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (PEN)</span>
+              <strong>S/.40.00</strong>
+            </li>
+          </ul>
+  
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code">
+              <button type="submit" class="btn btn-secondary">aplicar</button>
+            </div>
+          </form>
+        </div>
+
+      
+      <a href="info_pago.html"><button class="w-50 text-white" style="background: rgb(247, 58, 58);border-radius: 20px;border: none;margin:20px 0px 10px 90px;">Pagar</button></a>
+
+      <div id="yape" class="w-100 mt-4" style="background:darkmagenta;">
+        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnRwbf6pJfTunLWCHd7l3Uwh0guzStdtFahA&s" style="width: 100%;height: 50px;display: flex;text-decoration: none;">
+          <p style="width:60%;color: white;font-size: 25px;">Pagar con yape</p>
+          <img src="https://onroadts.com/wp-content/uploads/2023/05/image-1-1024x602.jpg" alt="" width="40%" height="50px">
+        </a>
+      </div>
+      <div id="yape" class="w-100 mt-4" style="background:rgb(26, 50, 156);">
+        <a href="info_pago.html" style="width: 100%;height: 50px;display: flex;text-decoration: none;">
+          <p style="width:60%;color: white;font-size: 25px;">Pagar con paypal</p>
+          <img src="https://newsroom.latam.paypal-corp.com/images/fillers/Wordmark%20on%20gold.png" alt="" width="40%" height="50px">
+        </a>
+      </div>
+      <div id="yape" class="w-100 mt-4" style="background:yellow;">
+        <a href="https://public.bnbstatic.com/image/cms/article/body/202404/6f9fd388c0c7f50d5ed8009f7ed8cd74.jpeg" style="width: 100%;height: 50px;display: flex;text-decoration: none;">
+          <p style="width:60%;color: black;font-size: 25px;">Pagar con Binance</p>
+          <img src="https://i.pinimg.com/564x/22/ae/e1/22aee16e43e33d890ee49cfcebbe3d94.jpg" alt="" width="40%" height="50px">
+        </a>
+      </div>
+      
+    </div>
+
+
+    <!-- --------------------------------PIE DE PAGINA------------------------------------------------>
+
+    <div id="footer" class="container-fluid " style="background: black;min-height: 300px;">
+      <footer class="py-5 text-white">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-6 col-md-2 mb-3 ">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0"style="color:grey">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-6 col-md-2 mb-3 ">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:grey">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-md-5 offset-md-1 mb-3 ">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p style="color:grey">Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" >
+          <p style="color:grey">© 2024 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+</body>
+<script>
+  function sumarcantidad() {
+    var precio = document.getElementById('precio_p1').value;
+    var cantidad = document.getElementById('cantidad_p1').value;
+    var nueva_cantidad = parseInt(cantidad) + 1;
+    document.getElementById('cantidad_p1').value = nueva_cantidad;
+    calcularSubTotal(precio, nueva_cantidad);
+  }
+  function restarcantidad() {
+    var precio = document.getElementById('precio_p1').value;
+    var cantidad = document.getElementById('cantidad_p1').value;
+    if (cantidad > 1) {
+      var nueva_cantidad = parseInt(cantidad) - 1;
+      document.getElementById('cantidad_p1').value = nueva_cantidad;
+      calcularSubTotal(precio, nueva_cantidad);
+    }
+
+  }
+  function calcularSubTotal(precio, cantidad) {
+    var subtotal = precio * cantidad;
+    document.getElementById('subtotal').innerHTML = 'S/.' + subtotal;
+  }
+</script>
+
+</html>
