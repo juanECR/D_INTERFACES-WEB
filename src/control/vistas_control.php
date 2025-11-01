@@ -13,14 +13,9 @@ class vistasControlador extends vistaModelo
 
         if (!isset($_SESSION['sesion_id'])) {
             if (isset($_GET['views'])) {
+                //aqui van las exepciones de vista por mas quer no exista una sesion
                 $ruta = explode("/", $_GET['views']);
-                if ($ruta[0]=="UpdatePassword") {
-                    $respuesta = "UpdatePassword";
-                }else if($ruta[0]=="resetPassword"){
-                     $respuesta = "resetPassword";
-                }else {
-                    $respuesta = "login";
-                }
+                $respuesta = "login";
             } else {
                 $respuesta = "login";
             }

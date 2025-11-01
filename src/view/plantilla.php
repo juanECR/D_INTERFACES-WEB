@@ -45,16 +45,11 @@ if (isset($_SESSION['sesion_id']) && isset($_SESSION['sesion_token'])) {
 }
 
 
-if ($vista == "login" || $vista == "404" ||$vista == "UpdatePassword" || $vista == "resetPassword" ) {
+if ($vista == "login" || $vista == "404" ) {
     require_once "./src/view/" . $vista . ".php";
 } else {
-    
-   if($vista != "./src/view/imprimir-movimiento.php"){
-       include "./src/view/include/header.php";
-    }
+    include "./src/view/include/header.php";
     include $vista;
-      if($vista != "./src/view/imprimir-movimiento.php" ){
-       include "./src/view/include/footer.php";
-    } 
+    include "./src/view/include/footer.php";
 }
 ?>
