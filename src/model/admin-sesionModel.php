@@ -10,9 +10,10 @@ class SessionModel
         $this->conexion = new Conexion();
         $this->conexion = $this->conexion->connect();
     }
+
     public function registrarSesion($usuario_id,$token, $fecha_hora_inicio, $fecha_hora_fin, $ip_Adress, $user_agent )
     {
-        $sql = $this->conexion->query("INSERT INTO sesiones (usuario_id, token , fecha_hora_inicio, fecha_hora_fin, ip_address, user_agent) VALUES ('$usuario_id','$token','$fecha_hora_inicio','$fecha_hora_fin','$ip_Adress','$user_agent')");
+        $sql = $this->conexion->query("INSERT INTO sesiones (usuario_id, token_sesion , fecha_inicio, fecha_fin, ip_address, user_agent) VALUES ('$usuario_id','$token','$fecha_hora_inicio','$fecha_hora_fin','$ip_Adress','$user_agent')");
         if ($sql) {
             $sql = $this->conexion->insert_id;
         } else {

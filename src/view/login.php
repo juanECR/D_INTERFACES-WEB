@@ -28,6 +28,7 @@
   align-items: center;
   font-family: var(--font-family);
   background-color: #050505;
+  height: 100vh;
 }
 
 /* --- Card Structure --- */

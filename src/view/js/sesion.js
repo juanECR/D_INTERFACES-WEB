@@ -31,7 +31,6 @@ async function iniciar_sesion() {
                 body: formData
             });
             location.replace(base_url);
-            location.replace(base_url);
         } else {
          Swal.fire({
             icon: "error",
