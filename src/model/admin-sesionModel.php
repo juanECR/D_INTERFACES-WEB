@@ -30,18 +30,18 @@ class SessionModel
         $b_sesion = $this->conexion->query("SELECT * FROM sesiones WHERE id='$id_sesion'");
         $datos_sesion = $b_sesion->fetch_object();
 
-        $fecha_hora_fin_sesion = $datos_sesion->fecha_hora_fin;
+        $fecha_hora_fin_sesion = $datos_sesion->fecha_fin;
 
         $fecha_hora_fin = strtotime('+8 hour', strtotime($fecha_hora_fin_sesion));
         $fecha_hora_fin = date("Y-m-d H:i:s", $fecha_hora_fin);
 
-        if ((password_verify($datos_sesion->token, $token)) && ($hora_actual <= $fecha_hora_fin)) {
+        if ((password_verify($datos_sesion->token_sesion, $token)) && ($hora_actual <= $fecha_hora_fin)) {
             // actualizar fecha de sesion
             $hora_actual = date("Y-m-d H:i:s");
             $nueva_fecha_hora_fin = strtotime('+1 minute', strtotime($hora_actual));
             $nueva_fecha_hora_fin = date("Y-m-d H:i:s", $nueva_fecha_hora_fin);
 
-            $this->conexion->query("UPDATE sesiones SET fecha_hora_fin='$nueva_fecha_hora_fin' WHERE id=$id_sesion");
+            $this->conexion->query("UPDATE sesiones SET fecha_fin='$nueva_fecha_hora_fin' WHERE id=$id_sesion");
             return 1;
         } else {
             return 0;

@@ -45,9 +45,9 @@ if (isset($_SESSION['sesion_id']) && isset($_SESSION['sesion_token'])) {
 }
 
 
-if ($vista == "login" || $vista == "404" ) {
+if ($vista == "login" || $vista == "404" || $vista == "auth-signup" || $vista == "auth-password") {
     require_once "./src/view/" . $vista . ".php";
-} else {
+}else{
     include "./src/view/include/header.php";
     include $vista;
     include "./src/view/include/footer.php";

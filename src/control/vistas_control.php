@@ -15,7 +15,11 @@ class vistasControlador extends vistaModelo
             if (isset($_GET['views'])) {
                 //aqui van las exepciones de vista por mas quer no exista una sesion
                 $ruta = explode("/", $_GET['views']);
-                $respuesta = "login";
+                if($ruta[0] == 'auth-signup' || $ruta[0] == 'auth-password'){
+                 $respuesta = $ruta[0];
+                }else{
+                   $respuesta = "login";  
+                }
             } else {
                 $respuesta = "login";
             }

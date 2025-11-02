@@ -14,7 +14,7 @@
      <meta name="theme-color" content="#ffffff">
 
      <!-- App favicon -->
-     <link rel="shortcut icon" href="assets/images/favicon.ico">
+     <link rel="shortcut icon" href="src/view/assets/images/favicon.ico">
 
      <!-- Google Font Family link -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +22,16 @@
      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
      <!-- Vendor css -->
-     <link href="assets/css/vendor.min.css" rel="stylesheet" type="text/css" />
+     <link href="src/view/assets/css/vendor.min.css" rel="stylesheet" type="text/css" />
 
      <!-- Icons css -->
-     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+     <link href="src/view/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
      <!-- App css -->
-     <link href="assets/css/style.min.css" rel="stylesheet" type="text/css" />
+     <link href="src/view/assets/css/style.min.css" rel="stylesheet" type="text/css" />
 
      <!-- Theme Config js -->
-     <script src="assets/js/config.js"></script>
+     <script src="src/view/assets/js/config.js"></script>
 </head>
 
 <body class="authentication-bg">
@@ -44,11 +44,11 @@
                                    <div class="text-center">
                                         <div class="mx-auto mb-4 text-center auth-logo">
                                              <a href="index.html" class="logo-dark">
-                                                  <img src="assets/images/logo-dark.png" height="32" alt="logo dark">
+                                                  <img src="src/view/assets/images/logo-dark.png" height="32" alt="logo dark">
                                              </a>
 
                                              <a href="index.html" class="logo-light">
-                                                  <img src="assets/images/logo-light.png" height="28" alt="logo light">
+                                                  <img src="src/view/assets/images/logo-light.png" height="28" alt="logo light">
                                              </a>
                                         </div>
                                         <h4 class="fw-bold text-dark mb-2">Sign Up</h3>
@@ -89,7 +89,7 @@
                               </div>
                          </div>
                          <p class="text-center mt-4 text-white text-opacity-50">I already have an account
-                              <a href="auth-signin.html" class="text-decoration-none text-white fw-bold">Sign In</a>
+                              <a href="login" class="text-decoration-none text-white fw-bold">Sign In</a>
                          </p>
                     </div>
                </div>
@@ -97,10 +97,10 @@
      </div>
 
      <!-- Vendor Javascript -->
-     <script src="assets/js/vendor.min.js"></script>
+     <script src="src/view/assets/js/vendor.min.js"></script>
 
      <!-- App Javascript -->
-     <script src="assets/js/app.js"></script>
+     <script src="src/view/assets/js/app.js"></script>
 
 </body>
 

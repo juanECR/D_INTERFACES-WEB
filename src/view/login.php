@@ -67,7 +67,7 @@
                                   <div class="mb-3">
                                       <div class="d-flex justify-content-between align-items-center">
                                           <label for="password" class="form-label">Password</label>
-                                          <a href="auth-password.html" class="text-decoration-none small text-muted">Forgot password?</a>
+                                          <a href="auth-password" class="text-decoration-none small text-muted">Forgot password?</a>
                                       </div>
                                       <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
                                   </div>
@@ -82,7 +82,7 @@
                           </div>
                       </div>
                       <p class="text-center mt-4 text-white text-opacity-50">Don't have an account? 
-                          <a href="auth-signup.html" class="text-decoration-none text-white fw-bold">Sign Up</a>
+                          <a href="auth-signup" class="text-decoration-none text-white fw-bold">Sign Up</a>
                       </p>
                   </div>
               </div>

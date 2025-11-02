@@ -26,11 +26,9 @@ class vistaModelo
     if (!is_string($vista) || !preg_match('/^[a-z0-9\-_]+$/i', $vista)) {
         return '404';
     }
-
     // Mapa de rutas (fácil de mantener)
     $rutas = [
         'charts'      => __DIR__ . '/../view/charts.php',
-        'auth-signin' => __DIR__ . '/../view/auth-signin.php',
         'inicio'      => __DIR__ . '/../view/inicio.php',
         'index'       => __DIR__ . '/../view/inicio.php',
         'eventos'       => __DIR__ . '/../view/eventos.php',

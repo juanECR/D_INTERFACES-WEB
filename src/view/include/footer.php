@@ -32,7 +32,7 @@
 
     <!-- Dashboard Js -->
     <script src="src/view/assets/js/pages/dashboard.js"></script>
-        <script src="<?php echo BASE_URL;?>src/view/js/sesion.js"></script>
+    <script src="<?php echo BASE_URL;?>src/view/js/sesion.js"></script>
 
 </body>
 
