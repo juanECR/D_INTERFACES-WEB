@@ -288,51 +288,7 @@
                                         </tr>
                                     </thead> <!-- end thead-->
                                     <tbody id="tbody_eventos">
-                                        <tr>
-                                            <td><a href="#!">#TZ5625</a></td>
-                                            <td>29 April 2024</td>
-                                            <td><a href="#!">Anna M. Hines</a></td>
-                                            <td>(+1)-555-1564-261</td>
-                                            <td>Burr Ridge/Illinois</td>
-                                            <td>Credit Card</td>
-                                            <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#!">#TZ9652</a></td>
-                                            <td>25 April 2024</td>
-                                            <td><a href="#!">Judith H. Fritsche</a></td>
-                                            <td>(+57)-305-5579-759</td>
-                                            <td>SULLIVAN/Kentucky</td>
-                                            <td>Credit Card</td>
-                                            <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#!">#TZ5984</a></td>
-                                            <td>25 April 2024</td>
-                                            <td><a href="#!">Peter T. Smith</a></td>
-                                            <td>(+33)-655-5187-93</td>
-                                            <td>Yreka/California</td>
-                                            <td>Pay Pal</td>
-                                            <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#!">#TZ3625</a></td>
-                                            <td>21 April 2024</td>
-                                            <td><a href="#!">Emmanuel J. Delcid</a></td>
-                                            <td>(+30)-693-5553-637</td>
-                                            <td>Atlanta/Georgia</td>
-                                            <td>Pay Pal</td>
-                                            <td><i class="bx bxs-circle text-primary me-1"></i>Processing</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#!">#TZ8652</a></td>
-                                            <td>18 April 2024</td>
-                                            <td><a href="#!">William J. Cook</a></td>
-                                            <td>(+91)-855-5446-150</td>
-                                            <td>Rosenberg/Texas</td>
-                                            <td>Credit Card</td>
-                                            <td><i class="bx bxs-circle text-primary me-1"></i>Processing</td>
-                                        </tr>
+                                        <!-- js -->
                                     </tbody> <!-- end tbody -->
                                 </table> <!-- end table -->
                             </div> <!-- table responsive -->

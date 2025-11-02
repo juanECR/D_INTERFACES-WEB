@@ -1,13 +1,39 @@
-//apis consulting
-const uri = 'https://sigev.cwefy.com/src/control/api.php?tipo=';
-let token = '72590064c38aa4ad1a9561e4dd80bb9f2bb57ebd05a32808a964396f2bc14322-20251005-1';
-
-
 document.addEventListener('DOMContentLoaded', function() {
+    obtenerToken();
     listarEventos();
 });
 
+async function obtenerToken() {
+    try {
+        let datos = new FormData();
+        datos.append('sesion', session_session);
+        datos.append('token', token_token);
+        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=listarTokens', {
+            mode: 'cors',
+            method: 'POST',
+            cache: 'no-cache',
+            body: datos
+        });
+        let json = await result.json();
+        if (json.status && json.contenido && json.contenido.length > 0) {
+            let datos = json.contenido;
+            token = datos[0].token;
+            localStorage.setItem('api_token', token);
+        }else{
+            console.log("Error al obtener el token" + json.mensaje);
+        }
+    } catch (e) {
+        console.log("Error function || " + e);
+    }
+}
+
+//API requests | | | | | ------------------------------------------------
+const uri = 'https://sigev.cwefy.com/src/control/api.php?tipo=';
+let token = localStorage.getItem('api_token');
+
 async function listarEventos() {
+    let tabla = document.getElementById("tbody_eventos");
+    tabla.innerHTML = `<div class="text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>`;
     try {
         let datosForm = new FormData();
         datosForm.append('token', token);
@@ -20,8 +46,6 @@ async function listarEventos() {
         });
 
         let json = await respuesta.json();
-        let tabla = document.getElementById("tbody_eventos");
-
         if (json.status) {
             if (Array.isArray(json.data)) {
                 tabla.innerHTML = '';
@@ -40,8 +64,6 @@ async function listarEventos() {
                                             <td>${item.ubicacion}</td>
                                             <td>${item.organizador_id}</td>
                                             <td><i class="bx bxs-circle text-success me-1"></i>${item.estado}</td>
-                    
-
                     `;
                    
                     tabla.appendChild(nuevaFila);

@@ -26,15 +26,30 @@ class tokenModel{
         return $sql;
  }
 
-public function verificarDuplidadToken($token) {
-    $stmt = $this->conexion->prepare("SELECT id FROM tokens_api WHERE token = ?");
-    $stmt->bind_param("s", $token);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->num_rows > 0;
-}
+    public function verificarDuplidadToken($token) {
+        $stmt = $this->conexion->prepare("SELECT id FROM tokens_api WHERE token = ?");
+        $stmt->bind_param("s", $token);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->num_rows > 0;
+    }
 
+    public function obtenerDatosToken($idToken){
+        $stmt = $this->conexion->prepare("SELECT * FROM tokens_api WHERE id = ?");
+        $stmt->bind_param("i", $idToken);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            return $result->fetch_object();
+        } else {
+            return null;
+        }
+    }
 
-
+    public function actualizarToken($idToken, $token, $descripcion){
+        $stmt = $this->conexion->prepare("UPDATE tokens_api SET token = ?, descripcion = ? WHERE id = ?");
+        $stmt->bind_param("ssi", $token, $descripcion, $idToken);
+        return $stmt->execute();
+    }
 
 }

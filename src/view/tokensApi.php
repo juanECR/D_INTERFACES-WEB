@@ -25,9 +25,7 @@
                 <h5 class="card-title">
                     Filtrar
                 </h5>
-                <p class="card-subtitle">Depending on your browser and OS, you’ll see a slightly different style
-                    of
-                    feedback.</p>
+                <p class="card-subtitle">Filtrar tokens en tiempo real.</p>
             </div>
 
             <div class="card-body">
@@ -36,12 +34,12 @@
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label for="validationDefault01" class="form-label">Titulo</label>
-                            <input type="text" class="form-control" id="validationDefault01" value="Mark"
+                            <input type="text" class="form-control" id="validationDefault01"
                                 required>
                         </div>
                         <div class="col-md-4">
-                            <label for="validationDefault02" class="form-label">categoria</label>
-                            <input type="text" class="form-control" id="validationDefault02" value="Otto"
+                            <label for="validationDefault02" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" id="validationDefault02"
                                 required>
                         </div>
                     </form>
@@ -61,7 +59,7 @@
                                 <i class="bx bx-plus me-1"></i>Agregar Token
                             </a>
                         </div>
-                        <!-- Modal -->
+                        <!-- Modal agregar token-->
                         <div class="modal fade" id="AgregarToken" tabindex="-1"
                             aria-labelledby="AgregarTokenLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -77,6 +75,7 @@
                                                     <label for="descripcion" class="form-label">Descripción</label>
                                                     <textarea type="text" class="form-control" id="descripcion" name="descripcion" required> </textarea>
                                                 </div>
+                                                <div id="alert-container"></div>
                                                 <div class="col-md-12">
                                                     <button class="btn btn-primary col-12" type="button" onclick="registrarToken();">Registrar</button>
                                                 </div>
@@ -99,30 +98,38 @@
                                 </tr>
                             </thead> <!-- end thead-->
                             <tbody id="tbody_tokensApi">
-                                <tr>
-                                    <td><a href="#!">#TZ5625</a></td>
-                                    <td>29 April 2024</td>
-                                    <td><a href="#!">Anna M. Hines</a></td>
-                                    <td>(+1)-555-1564-261</td>                     
-                                    <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ9652</a></td>
-                                    <td>25 April 2024</td>
-                                    <td><a href="#!">Judith H. Fritsche</a></td>
-                                    <td>(+57)-305-5579-759</td>                     
-                                    <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ5984</a></td>
-                                    <td>25 April 2024</td>
-                                    <td><a href="#!">Peter T. Smith</a></td>
-                                    <td>(+33)-655-5187-93</td>
-                                    <td><i class="bx bxs-circle text-success me-1"></i>Completed</td>
-                                </tr>
+                                <!-- js -->
                             </tbody> <!-- end tbody -->
                         </table> <!-- end table -->
                     </div> <!-- table responsive -->
+
+                    <!-- Modal actualizar token-->
+                    <div class="modal fade" id="actualizazrToken" tabindex="-1"
+                        aria-labelledby="actualizazrTokenLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <form class="row g-3" id="frm_update_token">
+                                            <input type="hidden" id="idToken_new" name="idToken_new" value="">
+                                            <div class="col-md-12">
+                                                <label for="tokenApi_new" class="form-label">Token</label>
+                                                <input type="text" class="form-control" id="tokenApi_new" name="tokenApi_new" required placeholder="xxxxxxxxxx-xxxx-12">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="descripcion_new" class="form-label">Descripción</label>
+                                                <textarea type="text" class="form-control" id="descripcion_new" name="descripcion_new" required> </textarea>
+                                            </div>
+                                            <div id="alert-container-upd"></div>
+                                            <div class="col-md-12">
+                                                <button class="btn btn-primary col-12" type="button" onclick="actualizarToken();">Actualizar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div
                         class="align-items-center justify-content-between row g-0 text-center text-sm-start p-3 border-top">
                         <div class="col-sm">

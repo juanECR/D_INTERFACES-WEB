@@ -18,7 +18,7 @@
         <!-- ==================================================== -->
   </div>
     <!-- END Wrapper -->
-
+  
     <!-- Vendor Javascript -->
     <script src="src/view/assets/js/vendor.min.js"></script>
 
@@ -29,6 +29,7 @@
     <script src="src/view/assets/vendor/jsvectormap/js/jsvectormap.min.js"></script>
     <script src="src/view/assets/vendor/jsvectormap/maps/world-merc.js"></script>
     <script src="src/view/assets/vendor/jsvectormap/maps/world.js"></script>
+  
 
     <!-- Dashboard Js -->
     <script src="src/view/assets/js/pages/dashboard.js"></script>

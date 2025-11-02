@@ -51,3 +51,37 @@ if ($tipo == "registrarToken") {
     }
     echo json_encode($arr_Respuesta);
 }
+
+if ($tipo == "obtenerDatosToken") {
+    $arr_Respuesta = array('status' => false, 'mensaje' => 'Error_Sesion');
+    if ($objSesion->verificar_sesion_si_activa($id_sesion, $token)) {
+        $idToken = $_POST['idToken'];
+        $datosToken = $objToken->obtenerDatosToken($idToken);
+        if ($datosToken) {
+            $arr_Respuesta = array('status' => true, 'contenido' => $datosToken);
+        } else {
+            $arr_Respuesta = array('status' => false, 'mensaje' => 'error de sistema');
+        }
+    }
+    echo json_encode($arr_Respuesta);
+}
+if ($tipo == "actualizarToken") {
+    $arr_Respuesta = array('status' => false, 'mensaje' => 'Error_Sesion');
+    if ($objSesion->verificar_sesion_si_activa($id_sesion, $token)) {
+        $idToken = $_POST['idToken_new'];
+        $tokenApi = trim($_POST['tokenApi_new']);
+        $descripcion = $_POST['descripcion_new'];
+        $tokennn = explode('-', $tokenApi);
+        if ($tokenApi == '' || count($tokennn) !== 3 || !is_numeric($tokennn[2])) {
+            $arr_Respuesta = array('status' => false, 'mensaje' => 'token invalido');
+        } else {
+            $sql = $objToken->actualizarToken($idToken, $tokenApi, $descripcion);
+            if ($sql) {
+                $arr_Respuesta = array('status' => true, 'mensaje' => 'Token actualizado');
+            } else {
+                $arr_Respuesta = array('status' => false, 'mensaje' => 'error de sistema');
+            }
+        }
+    }
+    echo json_encode($arr_Respuesta);
+}
