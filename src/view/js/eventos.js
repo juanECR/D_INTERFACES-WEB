@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     obtenerToken();
     listarEventos();
 });
@@ -19,7 +19,7 @@ async function obtenerToken() {
             let datos = json.contenido;
             token = datos[0].token;
             localStorage.setItem('api_token', token);
-        }else{
+        } else {
             console.log("Error al obtener el token" + json.mensaje);
         }
     } catch (e) {
@@ -38,7 +38,7 @@ async function listarEventos() {
         let datosForm = new FormData();
         datosForm.append('token', token);
 
-        let respuesta = await fetch(uri +'listarProximos', {
+        let respuesta = await fetch(uri + 'listarProximos', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -49,12 +49,12 @@ async function listarEventos() {
         if (json.status) {
             if (Array.isArray(json.data)) {
                 tabla.innerHTML = '';
-                let contador = 0; 
+                let contador = 0;
                 json.data.forEach((item) => {
                     contador++; // Incrementa aquí
                     let nuevaFila = document.createElement("tr");
                     nuevaFila.id = item.id;
-                     nuevaFila.dataset.categoria = item.categoria_evento_id;
+                    nuevaFila.dataset.categoria = item.categoria_evento_id;
                     nuevaFila.innerHTML = `
 
                                             <td><a href="#!">#ESN${contador}</a></td>
@@ -65,7 +65,7 @@ async function listarEventos() {
                                             <td>${item.organizador_id}</td>
                                             <td><i class="bx bxs-circle text-success me-1"></i>${item.estado}</td>
                     `;
-                   
+
                     tabla.appendChild(nuevaFila);
                 });
             } else {
@@ -78,7 +78,39 @@ async function listarEventos() {
         }
     } catch (e) {
         console.error('Error petición API:', e);
-        document.getElementById("eventsTableBody").innerHTML = 
+        document.getElementById("eventsTableBody").innerHTML =
             `<tr><td colspan="7">Error de conexión</td></tr>`;
+    }
+}
+
+async function CrearEvento() {
+    try {
+        // capturamos datos del formulario html
+        const datos = new FormData(frm_new_evento);
+        datos.append('token', token);
+        //enviar datos hacia el controlador
+        let respuesta = await fetch(uri + 'crearEvento', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            let modalEl = document.getElementById("CrearEvento");
+            let modal = bootstrap.Modal.getInstance(modalEl);
+            // Cerrar modal
+            modal.hide();
+            listarEventos();
+        } else {
+            console.log(json.mensaje);
+            let alertContainer = document.getElementById('alert-container_evento');
+            alertContainer.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                              ${json.mensaje}
+                                         </div>`;
+        }
+    } catch (e) {
+        console.log("Oops, ocurrio un error " + e);
     }
 }
